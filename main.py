@@ -70,7 +70,7 @@ def updateme(old, json_data, first_match, second_match):
     for i in json_data:
         new += f"| [{json_data[i]['name']}](https://t.me/{i}) | {up_github if json_data[i]['status'] else down_github} |\n"
     new_string = f"\n{first_match}\n{new}\n`Updated last at ~ {current_time}`\n\n"
-    new_string += f"**Made with ❤️ via [BotStatus](https://github.com/jainamoswal/botstatus)**. \n{second_match}" # self promotion is must ¯\_(ツ)_/¯
+    new_string += f"**Made with ❤️ via [BotStatus](https://github.com/zYxDevs/BotStatusFlow)**. \n{second_match}" # self promotion is must ¯\_(ツ)_/¯
     return re.sub(f'\n{first_match}.*?{second_match}', new_string, old, flags=re.DOTALL)
 
 # fetch status of all bots listed in the raw gist file
