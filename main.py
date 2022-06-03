@@ -97,8 +97,8 @@ async def edit_message(data):
     async with client:
         text = f'{start_message}\n' # I love f-strings and to comment every line :)
         for i in data:
-            text += f"{bullet} [{data[i]['name']}](https://t.me/{i}) ~ {up_telegram if data[i]['status'] else down_telegram}\n"
-        text += f"\n**Last Checked:** \n__{current_time}__\n"
+            text += f"{bullet} {up_telegram if data[i]['status'] else down_telegram} [{data[i]['name']}](https://t.me/{i})\n"
+        text += f"\n**Last Checked:** \n__{current_time} ({time_zone})__\n"
         text += end_message
         chats_to_edit = get_ids(all_mixed_ids)
         for chat_id, message_id in chats_to_edit:
